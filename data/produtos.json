@@ -1,9 +1,9 @@
 {
   "bazar": {
-    "nome": "Bazar Beneficente 2026",
+    "nome": "Bazar da União do Vegetal",
     "chamada": "Mercadorias apreendidas e doadas pela Receita Federal, com preço de bazar.",
-    "aviso": "Bazar beneficente com mercadorias apreendidas e doadas pela Receita Federal. Atenção: não é um bazar organizado pela Receita Federal.",
-    "data": "",
+    "aviso": "Bazar beneficente da União do Vegetal com mercadorias apreendidas e doadas pela Receita Federal. Atenção: não é um bazar organizado pela Receita Federal.",
+    "data": "Sábado, 14 de novembro de 2026",
     "horario": "",
     "local": "",
     "instagram": "",
@@ -94,10 +94,10 @@
     {
       "id": "teclado-kapbom-ka-690",
       "nomePlanilha": "Teclado Tablet Kapbom KA-690",
-      "nome": "Teclado Bluetooth para tablet Kapbom KA-690",
+      "nome": "Teclado Bluetooth dobrável Kapbom KA-690",
       "categoria": "acessorios",
       "modelo": "KA-690",
-      "descricao": "Teclado slim sem fio, Bluetooth, para tablet, celular e notebook. Bateria recarregável.",
+      "descricao": "Teclado sem fio dobrável, Bluetooth, para tablet, celular e notebook. Fechado, cabe no bolso da mochila.",
       "imagem": "img/produtos/teclado-kapbom-ka-690.webp",
       "unidades": 4,
       "valorRfb": 99.9,
@@ -106,7 +106,8 @@
         115
       ],
       "preco": 40,
-      "mercadoConferido": "2026-10-20"
+      "mercadoConferido": "2026-10-20",
+      "fotoReal": true
     },
     {
       "id": "camera-jortan-jt-817qj",
@@ -139,7 +140,8 @@
         475
       ],
       "preco": 300,
-      "mercadoConferido": "2026-10-20"
+      "mercadoConferido": "2026-10-20",
+      "fotoReal": true
     },
     {
       "id": "havit-sq128bt",
@@ -160,10 +162,10 @@
     {
       "id": "lampada-led-a60-12w",
       "nomePlanilha": "Lampada de Led A60 12W",
-      "nome": "Lâmpada LED A60 12 W",
+      "nome": "Lâmpada LED Kastello 12 W",
       "categoria": "casa",
       "modelo": "A60 12 W",
-      "descricao": "Lâmpada LED de 12 W no formato bulbo, o mesmo da lâmpada comum. Gasta bem menos energia.",
+      "descricao": "Lâmpada LED de 12 W no formato bulbo, o mesmo da lâmpada comum. Bivolt, 1006 lúmens.",
       "imagem": "img/produtos/lampada-led-a60-12w.webp",
       "unidades": 500,
       "valorRfb": 7,
@@ -172,7 +174,8 @@
         7
       ],
       "preco": 3.5,
-      "mercadoConferido": "2026-10-20"
+      "mercadoConferido": "2026-10-20",
+      "fotoReal": true
     }
   ]
 }

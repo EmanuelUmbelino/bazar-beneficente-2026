@@ -24,6 +24,7 @@ function preencherBazar() {
     b.instagram && ['instagram', b.instagram],
   ].filter(Boolean);
   if (!itens.length) itens.push(['calendario', 'Data, horário e local serão divulgados em breve']);
+  else if (!b.local) itens.push(['local', 'Local a divulgar']);
   const icones = {
     calendario: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
     local: '<path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
@@ -37,7 +38,7 @@ function preencherBazar() {
   }));
 
   $('#nota').textContent =
-    'Imagens ilustrativas. O desconto é calculado sobre o menor valor de referência entre a média de mercado e a avaliação da Receita Federal. ' +
+    'Algumas imagens são ilustrativas. O desconto é calculado sobre o menor valor de referência entre a média de mercado e a avaliação da Receita Federal. ' +
     'Os preços valem no dia do bazar e a disponibilidade pode mudar durante o evento.';
 }
 
@@ -153,7 +154,7 @@ function abrir(p) {
       el('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true', html: '<path d="M6 6l12 12M18 6 6 18"/>' })),
     el('div', { class: 'detalhe__foto' },
       el('img', { src: p.imagem, alt: p.nome }),
-      el('span', { class: 'detalhe__ilustrativa' }, 'Imagem ilustrativa')),
+      !p.fotoReal && el('span', { class: 'detalhe__ilustrativa' }, 'Imagem ilustrativa')),
     el('div', { class: 'detalhe__info' },
       el('p', { class: 'card__cat' }, nomeCategoria(p.categoria)),
       el('h2', { id: 'detalhe-nome' }, p.nome),

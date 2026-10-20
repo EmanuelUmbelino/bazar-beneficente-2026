@@ -72,9 +72,9 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 @media (min-width: 900px) { .vitrine { display: block; } }
 .vitrine figure {
   position: absolute; margin: 0; background: #fff; border: 1px solid var(--linha); border-radius: 22px;
-  box-shadow: 0 20px 50px rgb(16 24 40 / 0.12); padding: 16px;
+  box-shadow: 0 20px 50px rgb(16 24 40 / 0.12); overflow: visible;
 }
-.vitrine img { width: 100%; height: 100%; object-fit: contain; }
+.vitrine img { width: 100%; height: 100%; object-fit: cover; border-radius: 21px; }
 .vitrine span {
   position: absolute; top: -10px; right: -10px; background: var(--oferta); color: #fff; font-weight: 800;
   font-size: 0.95rem; padding: 6px 11px; border-radius: 6px; box-shadow: 0 6px 16px rgb(225 29 72 / 0.35);
@@ -134,7 +134,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 }
 .card:hover { transform: translateY(-2px); box-shadow: var(--sombra); }
 .card__foto { position: relative; aspect-ratio: 1; background: #fff; border-bottom: 1px solid var(--linha); }
-.card__foto img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
+.card__foto img { width: 100%; height: 100%; object-fit: cover; }
 .selo {
   position: absolute; top: 12px; left: 12px;
   background: var(--oferta); color: #fff; font-weight: 800; font-size: 0.9rem; letter-spacing: -0.01em;
@@ -178,8 +178,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   border: 1px solid var(--linha); background: rgb(255 255 255 / 0.92); cursor: pointer; display: grid; place-items: center;
 }
 .detalhe__fechar svg { width: 20px; height: 20px; }
-.detalhe__foto { position: relative; background: #fff; border-right: 1px solid var(--linha); display: grid; place-items: center; padding: 28px; }
-.detalhe__foto img { width: 100%; max-height: 440px; object-fit: contain; }
+.detalhe__foto { position: relative; background: #fff; border-right: 1px solid var(--linha); display: grid; place-items: center; }
+.detalhe__foto img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .detalhe__ilustrativa { position: absolute; bottom: 12px; left: 16px; font-size: 0.75rem; color: var(--suave); }
 .detalhe__info { padding: 32px 28px 28px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; }
 .detalhe__info h2 { margin: 0; font-size: 1.6rem; line-height: 1.15; letter-spacing: -0.025em; padding-right: 36px; }
@@ -255,7 +255,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   .aba { padding: 14px 2px 11px; font-size: 0.93rem; }
   .grade { padding: 16px 16px 0; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .card { border-radius: 14px; }
-  .card__foto img { padding: 10px; }
   .card__corpo { padding: 10px 12px 12px; }
   .card__nome { font-size: 0.92rem; }
   .preco { gap: 2px 8px; }
@@ -267,8 +266,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   .detalhe[open] { animation: subir 0.22s ease; }
   @keyframes subir { from { transform: translateY(40px); opacity: 0; } }
   .detalhe__caixa { grid-template-columns: 1fr; }
-  .detalhe__foto { border-right: 0; border-bottom: 1px solid var(--linha); padding: 20px; }
-  .detalhe__foto img { max-height: 240px; }
+  .detalhe__foto { border-right: 0; border-bottom: 1px solid var(--linha); }
+  .detalhe__foto img { width: auto; height: 280px; }
   .detalhe__info { padding: 20px 18px 28px; }
   .detalhe__info h2 { font-size: 1.3rem; padding-right: 0; }
   .pagina { padding: 32px 16px 48px; }

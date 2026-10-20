@@ -1,6 +1,6 @@
-# Bazar Beneficente 2026
+# Bazar da União do Vegetal
 
-Site de vitrine do bazar beneficente com mercadorias apreendidas e doadas pela Receita Federal. Só exibe os produtos: não há compra pelo site.
+Site de vitrine do bazar beneficente da União do Vegetal (sábado, 14/11/2026), com mercadorias apreendidas e doadas pela Receita Federal. Só exibe os produtos: não há compra pelo site.
 
 Publicado em: https://emanuelumbelino.github.io/bazar-beneficente-2026/
 
