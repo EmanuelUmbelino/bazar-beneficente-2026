@@ -47,7 +47,7 @@
       "categoria": "tablets",
       "modelo": "MK3L3LL/A",
       "descricao": "Tela Retina de 10,2 polegadas, chip A13 Bionic, Touch ID e câmera frontal ultra-angular de 12 MP.",
-      "imagem": "img/produtos/ipad-9-prata.webp",
+      "imagem": "img/produtos/ipad-9-prata.webp?v=2",
       "unidades": 2,
       "valorRfb": 5888.85,
       "mercado": [
@@ -64,7 +64,7 @@
       "categoria": "tablets",
       "modelo": "64 GB",
       "descricao": "Tela Retina de 10,2 polegadas, chip A13 Bionic, Touch ID e 64 GB de armazenamento.",
-      "imagem": "img/produtos/ipad-9-cinza.webp",
+      "imagem": "img/produtos/ipad-9-cinza.webp?v=2",
       "unidades": 1,
       "valorRfb": 2277.97,
       "mercado": [
@@ -81,7 +81,7 @@
       "categoria": "acessorios",
       "modelo": "MUWA3AM/A",
       "descricao": "Caneta da Apple com conexão USB-C. Funciona com iPads de entrada USB-C (iPad 10ª geração ou mais novo, iPad Air, iPad Pro e iPad mini recentes). Não é compatível com o iPad 9ª geração.",
-      "imagem": "img/produtos/apple-pencil-usb-c.webp",
+      "imagem": "img/produtos/apple-pencil-usb-c.webp?v=2",
       "unidades": 1,
       "valorRfb": 1179,
       "mercado": [
@@ -98,7 +98,7 @@
       "categoria": "acessorios",
       "modelo": "KA-690",
       "descricao": "Teclado sem fio dobrável, Bluetooth, para tablet, celular e notebook. Fechado, cabe no bolso da mochila.",
-      "imagem": "img/produtos/teclado-kapbom-ka-690.webp",
+      "imagem": "img/produtos/teclado-kapbom-ka-690.webp?v=2",
       "unidades": 4,
       "valorRfb": 99.9,
       "mercado": [
@@ -116,7 +116,7 @@
       "categoria": "seguranca",
       "modelo": "JT-817QJ",
       "descricao": "Câmera IP Wi-Fi Full HD com visão noturna, sensor de movimento, áudio nos dois sentidos e acesso pelo celular.",
-      "imagem": "img/produtos/camera-jortan-jt-817qj.webp",
+      "imagem": "img/produtos/camera-jortan-jt-817qj.webp?v=2",
       "unidades": 1,
       "valorRfb": 190.95,
       "mercado": [
@@ -132,7 +132,7 @@
       "categoria": "som",
       "modelo": "Clip 4",
       "descricao": "Caixa de som Bluetooth portátil, à prova d'água e poeira, até 10 horas de bateria e mosquetão para prender na mochila.",
-      "imagem": "img/produtos/jbl-clip-4.webp",
+      "imagem": "img/produtos/jbl-clip-4.webp?v=2",
       "unidades": 1,
       "valorRfb": 454,
       "mercado": [
@@ -150,7 +150,7 @@
       "categoria": "som",
       "modelo": "SQ128BT",
       "descricao": "Caixa de som Bluetooth com luzes RGB, rádio FM, entrada USB, cartão microSD e cabo auxiliar.",
-      "imagem": "img/produtos/havit-sq128bt.webp",
+      "imagem": "img/produtos/havit-sq128bt.webp?v=2",
       "unidades": 1,
       "valorRfb": 250,
       "mercado": [
@@ -166,7 +166,7 @@
       "categoria": "casa",
       "modelo": "A60 12 W",
       "descricao": "Lâmpada LED de 12 W no formato bulbo, o mesmo da lâmpada comum. Bivolt, 1006 lúmens.",
-      "imagem": "img/produtos/lampada-led-a60-12w.webp",
+      "imagem": "img/produtos/lampada-led-a60-12w.webp?v=2",
       "unidades": 500,
       "valorRfb": 7,
       "mercado": [
