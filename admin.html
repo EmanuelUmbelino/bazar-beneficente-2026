@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Controle de vendas | Bazar Beneficente 2026</title>
-  <meta name="theme-color" content="#f7f5f0">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/img/icone.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/estilo.css">
   <link rel="stylesheet" href="assets/css/admin.css">
   <script type="module" src="assets/js/admin.js"></script>
@@ -17,7 +17,10 @@
 <body>
   <header class="topo">
     <div class="topo__dentro">
-      <a class="marca" href="./">Controle <span>de vendas</span></a>
+      <a class="marca" href="./">
+        <img src="assets/img/icone.svg" alt="" width="32" height="32">
+        <span>Controle <b>de vendas</b></span>
+      </a>
       <nav class="menu" aria-label="Principal">
         <a href="./" target="_blank" rel="noopener">Ver o site</a>
         <button type="button" class="menu__botao" id="abrir-acesso">Acesso</button>
@@ -36,7 +39,7 @@
         <li>Gere o token e cole abaixo.</li>
       </ol>
       <form id="form-token" class="acesso__form">
-        <input class="campo" id="token" type="password" placeholder="github_pat_..." autocomplete="off" required aria-label="Token do GitHub">
+        <input id="token" type="password" placeholder="github_pat_..." autocomplete="off" required aria-label="Token do GitHub">
         <button class="botao" type="submit">Conectar</button>
       </form>
       <p class="acesso__sair" id="sair-linha" hidden>Conectado. <button type="button" class="link" id="sair">Desconectar este aparelho</button></p>
@@ -46,7 +49,10 @@
     <section class="resumo" id="resumo" aria-label="Resumo"></section>
 
     <div class="painel__barra">
-      <input class="campo" id="busca" type="search" placeholder="Buscar produto" autocomplete="off" aria-label="Buscar produto">
+      <label class="busca">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="busca" type="search" placeholder="Buscar produto" autocomplete="off" aria-label="Buscar produto">
+      </label>
       <p class="painel__fonte" id="fonte"></p>
     </div>
 
