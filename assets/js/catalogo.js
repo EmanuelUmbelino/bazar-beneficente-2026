@@ -43,13 +43,11 @@ function preencherBazar() {
 }
 
 function preencherNumeros() {
-  const criterio = dados.bazar.descontoSobre;
-  const disponiveis = dados.produtos.reduce((soma, p) => soma + restantes(p, vendidos), 0);
-  const maior = Math.max(...dados.produtos.map((p) => desconto(p, criterio)));
+  // O texto fala em mercado, então o maior desconto é contado só contra a média de mercado.
+  const maior = Math.max(...dados.produtos.map((p) => desconto(p, 'mercado')));
   const linhas = [
     [dados.produtos.length, 'produtos'],
-    [disponiveis.toLocaleString('pt-BR'), 'unidades disponíveis'],
-    [`até ${maior}%`, 'abaixo da referência'],
+    [`até ${maior}%`, 'de desconto em relação ao mercado'],
   ];
   $('#numeros').replaceChildren(...linhas.map(([valor, rotulo]) =>
     el('div', {}, el('dt', {}, rotulo), el('dd', {}, valor))));
