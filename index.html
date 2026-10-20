@@ -37,6 +37,7 @@
         <p class="hero__selo">Mercadorias da Receita Federal</p>
         <h1 data-campo="nome">Bazar Beneficente 2026</h1>
         <p class="hero__chamada" data-campo="chamada">Mercadorias apreendidas e doadas pela Receita Federal, com preço de bazar.</p>
+        <p class="hero__aviso">Atenção: não é um bazar organizado pela Receita Federal.</p>
         <ul class="hero__info" id="info"></ul>
         <dl class="numeros" id="numeros"></dl>
         </div>
@@ -44,35 +45,16 @@
       </div>
     </section>
 
-    <div class="aviso">
-      <p data-campo="aviso"></p>
-    </div>
-
     <section class="catalogo" aria-labelledby="titulo-catalogo">
       <h2 id="titulo-catalogo" class="sr">Produtos</h2>
       <div class="barra">
         <div class="barra__dentro">
-          <div class="chips" id="categorias" role="tablist" aria-label="Categorias"></div>
-          <div class="barra__ferramentas">
-            <label class="busca">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-              <input id="busca" type="search" placeholder="Buscar produto" autocomplete="off" aria-label="Buscar produto">
-            </label>
-            <label class="ordem">
-              <span class="sr">Ordenar</span>
-              <select id="ordem" aria-label="Ordenar">
-                <option value="destaque">Destaques</option>
-                <option value="desconto">Maior desconto</option>
-                <option value="menor">Menor preço</option>
-                <option value="maior">Maior preço</option>
-              </select>
-            </label>
-          </div>
+          <div class="abas" id="categorias" role="tablist" aria-label="Categorias"></div>
         </div>
       </div>
 
       <div class="grade" id="grade" aria-live="polite"></div>
-      <p class="vazio" id="vazio" hidden>Nenhum produto encontrado. Tente outra busca ou categoria.</p>
+      <p class="vazio" id="vazio" hidden>Nenhum produto nesta categoria.</p>
 
       <p class="nota" id="nota"></p>
     </section>

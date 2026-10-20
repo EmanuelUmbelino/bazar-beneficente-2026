@@ -1,6 +1,6 @@
-import { carregarTudo, carregarJson, dinheiro, referencia, desconto, restantes, faixaMercado, semAcento, el } from './comum.js';
+import { carregarTudo, carregarJson, dinheiro, referencia, desconto, restantes, faixaMercado, el } from './comum.js';
 
-const estado = { categoria: 'todos', busca: '', ordem: 'destaque' };
+const estado = { categoria: 'todos' };
 let dados;
 let vendidos = {};
 
@@ -75,12 +75,12 @@ function montarCategorias() {
   const lista = [{ id: 'todos', nome: 'Todos' }, ...dados.categorias.filter((c) => contagem(c.id) > 0)];
   $('#categorias').replaceChildren(...lista.map((c) =>
     el('button', {
-      class: 'chip',
+      class: 'aba',
       role: 'tab',
       type: 'button',
       'aria-selected': String(estado.categoria === c.id),
       onclick: () => escolherCategoria(c.id),
-    }, c.nome, el('span', { class: 'chip__n' }, contagem(c.id)))));
+    }, c.nome, el('span', { class: 'aba__n' }, contagem(c.id)))));
 }
 
 function escolherCategoria(id) {
@@ -91,23 +91,11 @@ function escolherCategoria(id) {
 }
 
 function filtrados() {
-  const criterio = dados.bazar.descontoSobre;
-  const termo = semAcento(estado.busca.trim());
-  const lista = dados.produtos
+  // Ordem do produtos.json; esgotado vai para o fim.
+  return dados.produtos
+    .filter((p) => estado.categoria === 'todos' || p.categoria === estado.categoria)
     .map((p, ordem) => ({ p, ordem }))
-    .filter(({ p }) => estado.categoria === 'todos' || p.categoria === estado.categoria)
-    .filter(({ p }) => !termo || semAcento(`${p.nome} ${p.modelo || ''} ${nomeCategoria(p.categoria)}`).includes(termo));
-
-  const comparar = {
-    destaque: (a, b) => a.ordem - b.ordem,
-    desconto: (a, b) => desconto(b.p, criterio) - desconto(a.p, criterio),
-    menor: (a, b) => a.p.preco - b.p.preco,
-    maior: (a, b) => b.p.preco - a.p.preco,
-  }[estado.ordem];
-
-  // Esgotado vai para o fim, qualquer que seja a ordem.
-  return lista
-    .sort((a, b) => (restantes(a.p, vendidos) === 0) - (restantes(b.p, vendidos) === 0) || comparar(a, b))
+    .sort((a, b) => (restantes(a.p, vendidos) === 0) - (restantes(b.p, vendidos) === 0) || a.ordem - b.ordem)
     .map(({ p }) => p);
 }
 
@@ -222,8 +210,6 @@ async function iniciar() {
   montarCategorias();
   desenhar();
 
-  $('#busca').addEventListener('input', (e) => { estado.busca = e.target.value; desenhar(); });
-  $('#ordem').addEventListener('change', (e) => { estado.ordem = e.target.value; desenhar(); });
   $('#detalhe').addEventListener('click', (e) => { if (e.target.id === 'detalhe') fechar(); });
 
   // Durante o bazar, o estoque muda: confere a cada minuto com a aba aberta.

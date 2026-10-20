@@ -103,47 +103,28 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .numeros dd { margin: 0; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; }
 .numeros div:last-child dd { color: var(--oferta); }
 
-.aviso { max-width: var(--largura); margin: 20px auto 0; padding: 0 20px; }
-.aviso p {
-  margin: 0; padding: 12px 16px; border-radius: 12px;
-  background: var(--aviso); border: 1px solid var(--aviso-linha); color: #6b4a07; font-size: 0.92rem; font-weight: 500;
-}
+.hero__aviso { margin: 10px 0 0; color: var(--suave); font-size: 0.9rem; }
+.aviso-texto { margin: 0 0 8px; color: var(--suave); font-size: 0.95rem; }
 
-/* Barra de filtros */
+/* Abas de categoria */
 .barra { position: sticky; top: 57px; z-index: 10; background: color-mix(in srgb, var(--fundo) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-.barra__dentro {
-  max-width: var(--largura); margin: 0 auto; padding: 14px 20px;
-  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+.barra__dentro { max-width: var(--largura); margin: 0 auto; padding: 0 20px; }
+.abas { display: flex; gap: 28px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--linha); }
+.abas::-webkit-scrollbar { display: none; }
+.aba {
+  flex: none; display: inline-flex; align-items: center; gap: 6px;
+  padding: 16px 2px 13px; margin-bottom: -1px; border: 0; border-bottom: 2px solid transparent; background: none;
+  font-weight: 600; font-size: 0.97rem; color: var(--suave); cursor: pointer; transition: color 0.15s, border-color 0.15s;
 }
-.chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; min-width: 0; padding: 2px; }
-.chips::-webkit-scrollbar { display: none; }
-.chip {
-  flex: none; display: inline-flex; align-items: center; gap: 8px;
-  padding: 9px 14px; border-radius: 10px; border: 1px solid var(--linha); background: var(--superficie);
-  font-weight: 600; font-size: 0.92rem; cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s;
-}
-.chip:hover { border-color: #cfccc5; }
-.chip__n { font-size: 0.78rem; color: var(--suave); background: var(--fundo); border-radius: 5px; padding: 1px 7px; }
-.chip[aria-selected='true'] { background: var(--tinta); border-color: var(--tinta); color: #fff; }
-.chip[aria-selected='true'] .chip__n { background: rgb(255 255 255 / 0.18); color: #fff; }
-.barra__ferramentas { display: flex; gap: 8px; flex: 0 1 auto; }
-.busca {
-  display: flex; align-items: center; gap: 8px; padding: 0 14px; height: 42px;
-  background: var(--superficie); border: 1px solid var(--linha); border-radius: 10px; min-width: 220px;
-}
-.busca svg { width: 18px; height: 18px; color: var(--suave); flex: none; }
-.busca input { border: 0; outline: 0; background: transparent; width: 100%; font-size: 0.95rem; }
-.busca:focus-within { border-color: var(--marca); box-shadow: 0 0 0 3px rgb(15 118 110 / 0.15); }
-.ordem select {
-  height: 42px; padding: 0 36px 0 14px; border-radius: 10px; border: 1px solid var(--linha);
-  background: var(--superficie) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2363676f' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center / 16px;
-  appearance: none; font-weight: 600; font-size: 0.92rem; cursor: pointer;
-}
+.aba:hover { color: var(--tinta); }
+.aba__n { font-size: 0.8rem; font-weight: 500; color: #9a9da3; }
+.aba[aria-selected='true'] { color: var(--tinta); border-bottom-color: var(--marca); }
+.aba[aria-selected='true'] .aba__n { color: var(--marca); }
 
 /* Grade */
 .catalogo { padding-bottom: 32px; }
 .grade {
-  max-width: var(--largura); margin: 0 auto; padding: 8px 20px 0;
+  max-width: var(--largura); margin: 0 auto; padding: 24px 20px 0;
   display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 .card {
@@ -268,13 +249,11 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   .numeros dt { font-size: 0.78rem; line-height: 1.3; }
   .numeros dd { font-size: 1.3rem; }
   .marca img { width: 28px; height: 28px; }
-  .aviso { padding: 0 16px; margin-top: 16px; }
   .barra { top: 53px; }
-  .barra__dentro { padding: 12px 16px; }
-  .chips { flex-basis: 100%; margin: 0 -16px; padding: 2px 16px; }
-  .barra__ferramentas { flex-basis: 100%; }
-  .busca { flex: 1; min-width: 0; }
-  .grade { padding: 4px 16px 0; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .barra__dentro { padding: 0; }
+  .abas { gap: 22px; padding: 0 16px; }
+  .aba { padding: 14px 2px 11px; font-size: 0.93rem; }
+  .grade { padding: 16px 16px 0; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .card { border-radius: 14px; }
   .card__foto img { padding: 10px; }
   .card__corpo { padding: 10px 12px 12px; }
