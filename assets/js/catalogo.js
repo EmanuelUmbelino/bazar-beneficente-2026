@@ -103,7 +103,7 @@ function textoEstoque(p) {
   const r = restantes(p, vendidos);
   if (r === 0) return 'Esgotado';
   if (r < p.unidades) return r === 1 ? 'Resta 1 unidade' : `Restam ${r.toLocaleString('pt-BR')} unidades`;
-  return p.unidades === 1 ? 'Unidade única' : `${p.unidades.toLocaleString('pt-BR')} unidades`;
+  return p.unidades === 1 ? 'Única unidade' : `${p.unidades.toLocaleString('pt-BR')} unidades`;
 }
 
 function cartao(p) {
