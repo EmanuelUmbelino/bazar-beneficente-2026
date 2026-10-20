@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regras | Bazar Beneficente 2026</title>
+  <meta name="description" content="Regras de compra do Bazar Beneficente 2026: público, limites por CPF, recibos, organização e pagamento.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="assets/img/icone.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo__dentro">
+      <a class="marca" href="./">
+        <img src="assets/img/icone.svg" alt="" width="32" height="32">
+        <span>Bazar Beneficente <b>2026</b></span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="./">Catálogo</a>
+        <a href="regras.html" aria-current="page">Regras</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pagina">
+    <h1>Regras do bazar</h1>
+    <p class="intro">Para participar e garantir que tudo esteja dentro da lei, leia com atenção as regras abaixo.</p>
+
+    <div class="aviso" style="padding:0;margin:0 0 8px">
+      <p data-campo="aviso">Bazar beneficente com mercadorias apreendidas e doadas pela Receita Federal. Atenção: não é um bazar organizado pela Receita Federal.</p>
+    </div>
+
+    <section class="secao">
+      <h2><span>1</span>Quem pode comprar</h2>
+      <h3>Somente pessoas físicas</h3>
+      <p>As mercadorias são vendidas apenas a pessoas físicas, com apresentação de documento oficial com CPF. Não são aceitas propostas de "porteira fechada" nem a compra do lote completo por comerciantes.</p>
+    </section>
+
+    <section class="secao">
+      <h2><span>2</span>Limites de compra</h2>
+      <h3>2.1. Valor máximo por CPF</h3>
+      <div class="destaque-valor">
+        <strong>R$ 700,00</strong>
+        <span>Produtos com valor unitário acima de R$ 700,00 só podem ser comprados isoladamente.</span>
+      </div>
+
+      <h3>2.2. Quantidade máxima por item</h3>
+      <table class="tabela">
+        <thead>
+          <tr><th>Item</th><th>Quantidade máxima</th><th>Observação</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Brinquedos</td><td>15 unidades<span class="obs-celular">no máximo 3 por tipo</span></td><td>no máximo 3 unidades por tipo</td></tr>
+          <tr><td>Artigos de bazar</td><td>15 unidades<span class="obs-celular">no máximo 3 por tipo</span></td><td>no máximo 3 unidades por tipo</td></tr>
+          <tr><td>Eletroeletrônicos</td><td>2 unidades por tipo</td><td></td></tr>
+          <tr><td>Relógios de pulso</td><td>5 unidades</td><td></td></tr>
+          <tr><td>Instrumentos musicais</td><td>1 unidade por tipo</td><td></td></tr>
+          <tr><td>Vestuário</td><td>12 unidades<span class="obs-celular">no máximo 3 por tipo</span></td><td>no máximo 3 unidades por tipo</td></tr>
+          <tr><td>Perfumes e cosméticos</td><td>5 unidades<span class="obs-celular">no máximo 3 por tipo</span></td><td>no máximo 3 unidades por tipo</td></tr>
+        </tbody>
+      </table>
+      <p>Todas as compras são registradas com o CPF do comprador, que precisa estar presente no momento da compra.</p>
+    </section>
+
+    <section class="secao">
+      <h2><span>3</span>Recibos</h2>
+      <p>O recibo é emitido em duas vias, com:</p>
+      <ul>
+        <li>descrição e valor de cada item;</li>
+        <li>quantidade e total da compra;</li>
+        <li>nome e CPF do comprador;</li>
+        <li>assinatura do comprador confirmando que conhece as regras.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2><span>4</span>Organização do evento</h2>
+      <ol>
+        <li>Data, horário e local são divulgados com antecedência.</li>
+        <li>O acesso é controlado por senhas, para limitar o número de pessoas ao mesmo tempo no espaço.</li>
+        <li>Funcionários e voluntários compram nas mesmas condições do público, sem prioridade.</li>
+        <li>A divulgação é feita em redes sociais, rádio, cartazes e e-mail.</li>
+      </ol>
+      <h3>Formas de pagamento</h3>
+      <ul class="pagamento">
+        <li>Dinheiro</li>
+        <li>PIX</li>
+        <li>Cartão</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2><span>5</span>Catálogo de produtos</h2>
+      <p>Veja os produtos, os preços e o que ainda está disponível.</p>
+      <p><a class="botao" href="./">Ir para o catálogo</a></p>
+      <p id="contato" hidden></p>
+    </section>
+
+    <p class="nota" style="padding:0">Agradecemos o seu apoio. Cada compra ajuda a causa deste bazar.</p>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__dentro">
+      <p data-campo="aviso">Bazar beneficente com mercadorias apreendidas e doadas pela Receita Federal. Atenção: não é um bazar organizado pela Receita Federal.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { carregarJson, el } from './assets/js/comum.js';
+    carregarJson('data/produtos.json').then(({ bazar }) => {
+      document.querySelectorAll('[data-campo]').forEach((no) => { if (bazar[no.dataset.campo]) no.textContent = bazar[no.dataset.campo]; });
+      const contato = document.getElementById('contato');
+      if (bazar.instagram) {
+        contato.replaceChildren('Dúvidas? Fale com a gente no Instagram: ',
+          el('a', { href: `https://instagram.com/${bazar.instagram.replace('@', '')}`, target: '_blank', rel: 'noopener' }, bazar.instagram));
+        contato.hidden = false;
+      } else if (bazar.contato) {
+        contato.textContent = `Dúvidas? ${bazar.contato}`;
+        contato.hidden = false;
+      }
+    }).catch(() => {});
+  </script>
+</body>
+</html>

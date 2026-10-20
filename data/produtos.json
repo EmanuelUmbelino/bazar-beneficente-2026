@@ -1,0 +1,171 @@
+{
+  "bazar": {
+    "nome": "Bazar Beneficente 2026",
+    "chamada": "Mercadorias apreendidas e doadas pela Receita Federal, com preço de bazar.",
+    "aviso": "Bazar beneficente com mercadorias apreendidas e doadas pela Receita Federal. Atenção: não é um bazar organizado pela Receita Federal.",
+    "data": "",
+    "horario": "",
+    "local": "",
+    "instagram": "",
+    "contato": "",
+    "limitePorCpf": 700,
+    "descontoSobre": "menor"
+  },
+  "github": {
+    "dono": "EmanuelUmbelino",
+    "repo": "bazar-beneficente-2026",
+    "branch": "main"
+  },
+  "categorias": [
+    {
+      "id": "tablets",
+      "nome": "Tablets"
+    },
+    {
+      "id": "acessorios",
+      "nome": "Acessórios"
+    },
+    {
+      "id": "som",
+      "nome": "Som"
+    },
+    {
+      "id": "seguranca",
+      "nome": "Segurança"
+    },
+    {
+      "id": "casa",
+      "nome": "Casa e iluminação"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "ipad-9-prata",
+      "nomePlanilha": "Apple iPad 9th MK3L3LL/A (Prateado)",
+      "nome": "iPad 9ª geração, prata",
+      "categoria": "tablets",
+      "modelo": "MK3L3LL/A",
+      "descricao": "Tela Retina de 10,2 polegadas, chip A13 Bionic, Touch ID e câmera frontal ultra-angular de 12 MP.",
+      "imagem": "img/produtos/ipad-9-prata.webp",
+      "unidades": 2,
+      "valorRfb": 5888.85,
+      "mercado": [
+        2800,
+        3200
+      ],
+      "preco": 2000
+    },
+    {
+      "id": "ipad-9-cinza",
+      "nomePlanilha": "Apple iPad 9 ger 64GB (Cinza Espacial)",
+      "nome": "iPad 9ª geração 64 GB, cinza espacial",
+      "categoria": "tablets",
+      "modelo": "64 GB",
+      "descricao": "Tela Retina de 10,2 polegadas, chip A13 Bionic, Touch ID e 64 GB de armazenamento.",
+      "imagem": "img/produtos/ipad-9-cinza.webp",
+      "unidades": 1,
+      "valorRfb": 2277.97,
+      "mercado": [
+        1500,
+        1500
+      ],
+      "preco": 2000
+    },
+    {
+      "id": "apple-pencil-usb-c",
+      "nomePlanilha": "Apple Pencil USB-C (MUWA3AM/A)",
+      "nome": "Apple Pencil (USB-C)",
+      "categoria": "acessorios",
+      "modelo": "MUWA3AM/A",
+      "descricao": "Caneta da Apple com conexão USB-C. Funciona com iPads de entrada USB-C (iPad 10ª geração ou mais novo, iPad Air, iPad Pro e iPad mini recentes). Não é compatível com o iPad 9ª geração.",
+      "imagem": "img/produtos/apple-pencil-usb-c.webp",
+      "unidades": 1,
+      "valorRfb": 1179,
+      "mercado": [
+        2500,
+        2500
+      ],
+      "preco": 600
+    },
+    {
+      "id": "teclado-kapbom-ka-690",
+      "nomePlanilha": "Teclado Tablet Kapbom KA-690",
+      "nome": "Teclado Bluetooth para tablet Kapbom KA-690",
+      "categoria": "acessorios",
+      "modelo": "KA-690",
+      "descricao": "Teclado slim sem fio, Bluetooth, para tablet, celular e notebook. Bateria recarregável.",
+      "imagem": "img/produtos/teclado-kapbom-ka-690.webp",
+      "unidades": 4,
+      "valorRfb": 99.9,
+      "mercado": [
+        90,
+        120
+      ],
+      "preco": 40
+    },
+    {
+      "id": "camera-jortan-jt-817qj",
+      "nomePlanilha": "Camera Segurança Jortan JT-817qj",
+      "nome": "Câmera de segurança Wi-Fi Jortan JT-817QJ",
+      "categoria": "seguranca",
+      "modelo": "JT-817QJ",
+      "descricao": "Câmera IP Wi-Fi Full HD com visão noturna, sensor de movimento, áudio nos dois sentidos e acesso pelo celular.",
+      "imagem": "img/produtos/camera-jortan-jt-817qj.webp",
+      "unidades": 1,
+      "valorRfb": 190.95,
+      "mercado": [
+        150,
+        220
+      ],
+      "preco": 100
+    },
+    {
+      "id": "jbl-clip-4",
+      "nomePlanilha": "Caixa de Som JBL CLIP4D",
+      "nome": "Caixa de som JBL Clip 4",
+      "categoria": "som",
+      "modelo": "Clip 4",
+      "descricao": "Caixa de som Bluetooth portátil, à prova d'água e poeira, até 10 horas de bateria e mosquetão para prender na mochila.",
+      "imagem": "img/produtos/jbl-clip-4.webp",
+      "unidades": 1,
+      "valorRfb": 454,
+      "mercado": [
+        325,
+        500
+      ],
+      "preco": 300
+    },
+    {
+      "id": "havit-sq128bt",
+      "nomePlanilha": "Caixa de Som Havit SQ128BT",
+      "nome": "Caixa de som Havit SQ128BT",
+      "categoria": "som",
+      "modelo": "SQ128BT",
+      "descricao": "Caixa de som Bluetooth com luzes RGB, rádio FM, entrada USB, cartão microSD e cabo auxiliar.",
+      "imagem": "img/produtos/havit-sq128bt.webp",
+      "unidades": 1,
+      "valorRfb": 250,
+      "mercado": [
+        180,
+        280
+      ],
+      "preco": 150
+    },
+    {
+      "id": "lampada-led-a60-12w",
+      "nomePlanilha": "Lampada de Led A60 12W",
+      "nome": "Lâmpada LED A60 12 W",
+      "categoria": "casa",
+      "modelo": "A60 12 W",
+      "descricao": "Lâmpada LED de 12 W no formato bulbo, o mesmo da lâmpada comum. Gasta bem menos energia.",
+      "imagem": "img/produtos/lampada-led-a60-12w.webp",
+      "unidades": 500,
+      "valorRfb": 7,
+      "mercado": [
+        4.99,
+        4.99
+      ],
+      "preco": 3.5
+    }
+  ]
+}
