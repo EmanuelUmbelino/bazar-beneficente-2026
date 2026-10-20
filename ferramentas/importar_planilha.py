@@ -4,7 +4,7 @@ Uso:  python ferramentas/importar_planilha.py
 
 Casa cada linha da planilha com um produto pelo campo "nomePlanilha" e atualiza unidades,
 avaliação da Receita, faixa de mercado e preço. Nome de exibição, categoria, descrição e foto
-ficam como estão. Linha nova entra no fim com categoria "outros" e sem foto: complete à mão.
+ficam como estão, e a faixa de mercado também, quando o produto tem "mercadoConferido". Linha nova entra no fim com categoria "outros" e sem foto: complete à mão.
 """
 import csv
 import io
@@ -49,7 +49,7 @@ def main():
 
     dados = json.loads(ARQUIVO.read_text(encoding='utf-8'))
     por_nome = {p['nomePlanilha']: p for p in dados['produtos']}
-    vistos, novos, mudados = set(), [], []
+    vistos, novos, mudados, mantidos = set(), [], [], []
 
     for linha in linhas:
         nome = (linha.get('Produto') or '').strip()
@@ -70,6 +70,10 @@ def main():
             dados['produtos'].append(produto)
             novos.append(nome)
             continue
+        # Faixa de mercado conferida à mão vale mais que a da planilha: não sobrescreve.
+        if produto.get('mercadoConferido') and campos['mercado'] != produto.get('mercado'):
+            mantidos.append(f'{nome}: site {produto["mercado"]}, planilha {campos["mercado"]}')
+            del campos['mercado']
         diferencas = [k for k, v in campos.items() if produto.get(k) != v]
         if diferencas:
             produto.update(campos)
@@ -86,6 +90,7 @@ def main():
     print(f'{len(vistos)} produtos na planilha.')
     for titulo, lista in (('Novos (complete nome, categoria, descrição e foto)', novos),
                           ('Atualizados', mudados),
+                          ('Média de mercado conferida mantida (a planilha diz outra coisa)', mantidos),
                           ('No site mas fora da planilha (apague à mão se saíram)', sumidos)):
         if lista:
             print(f'\n{titulo}:')

@@ -9,7 +9,8 @@
     "instagram": "",
     "contato": "",
     "limitePorCpf": 700,
-    "descontoSobre": "menor"
+    "descontoSobre": "menor",
+    "pagamento": "Dinheiro, PIX ou cartão"
   },
   "github": {
     "dono": "EmanuelUmbelino",
@@ -50,10 +51,11 @@
       "unidades": 2,
       "valorRfb": 5888.85,
       "mercado": [
-        2800,
-        3200
+        2300,
+        2800
       ],
-      "preco": 2000
+      "preco": 2000,
+      "mercadoConferido": "2026-10-20"
     },
     {
       "id": "ipad-9-cinza",
@@ -66,10 +68,11 @@
       "unidades": 1,
       "valorRfb": 2277.97,
       "mercado": [
-        1500,
-        1500
+        2300,
+        2800
       ],
-      "preco": 2000
+      "preco": 2000,
+      "mercadoConferido": "2026-10-20"
     },
     {
       "id": "apple-pencil-usb-c",
@@ -82,10 +85,11 @@
       "unidades": 1,
       "valorRfb": 1179,
       "mercado": [
-        2500,
-        2500
+        800,
+        900
       ],
-      "preco": 600
+      "preco": 600,
+      "mercadoConferido": "2026-10-20"
     },
     {
       "id": "teclado-kapbom-ka-690",
@@ -98,10 +102,11 @@
       "unidades": 4,
       "valorRfb": 99.9,
       "mercado": [
-        90,
-        120
+        60,
+        115
       ],
-      "preco": 40
+      "preco": 40,
+      "mercadoConferido": "2026-10-20"
     },
     {
       "id": "camera-jortan-jt-817qj",
@@ -130,10 +135,11 @@
       "unidades": 1,
       "valorRfb": 454,
       "mercado": [
-        325,
-        500
+        400,
+        475
       ],
-      "preco": 300
+      "preco": 300,
+      "mercadoConferido": "2026-10-20"
     },
     {
       "id": "havit-sq128bt",
@@ -162,10 +168,11 @@
       "unidades": 500,
       "valorRfb": 7,
       "mercado": [
-        4.99,
-        4.99
+        5,
+        7
       ],
-      "preco": 3.5
+      "preco": 3.5,
+      "mercadoConferido": "2026-10-20"
     }
   ]
 }

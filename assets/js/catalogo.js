@@ -17,70 +17,25 @@ function preencherBazar() {
     if (valor) no.textContent = valor;
   });
 
-  const info = $('#info');
-  const itens = [
-    b.data && ['calendario', [b.data, b.horario].filter(Boolean).join(', ')],
-    b.local && ['local', b.local],
-    b.instagram && ['instagram', b.instagram],
+  const linhas = [
+    ['Quando', [b.data, b.horario].filter(Boolean).join(', ') || 'A divulgar'],
+    ['Onde', b.local || 'A divulgar'],
+    ['Pagamento', b.pagamento || 'Dinheiro, PIX ou cartão'],
+    ['Limite', `${dinheiro(b.limitePorCpf)} por CPF`],
+    b.instagram && ['Instagram', el('a', { href: `https://instagram.com/${b.instagram.replace('@', '')}`, target: '_blank', rel: 'noopener' }, b.instagram)],
   ].filter(Boolean);
-  if (!itens.length) itens.push(['calendario', 'Data, horário e local serão divulgados em breve']);
-  const icones = {
-    calendario: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
-    local: '<path d="M12 21s-7-6.1-7-11a7 7 0 1 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
-    instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
-  };
-  info.replaceChildren(...itens.map(([icone, texto]) => {
-    const conteudo = icone === 'instagram'
-      ? el('a', { href: `https://instagram.com/${texto.replace('@', '')}`, target: '_blank', rel: 'noopener' }, texto)
-      : texto;
-    return el('li', {}, el('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true', html: icones[icone] }), conteudo);
-  }));
+  $('#ficha').replaceChildren(...linhas.map(([k, v]) => el('div', {}, el('dt', {}, k), el('dd', {}, v))));
 
   $('#nota').textContent =
-    'Imagens ilustrativas. O desconto é calculado sobre o menor valor de referência entre a média de mercado e a avaliação da Receita Federal. ' +
+    'Imagens ilustrativas. O preço riscado é a referência mais baixa entre a média de mercado e a avaliação da Receita Federal. ' +
     'Os preços valem no dia do bazar e a disponibilidade pode mudar durante o evento.';
 }
 
-function preencherNumeros() {
-  const criterio = dados.bazar.descontoSobre;
-  const disponiveis = dados.produtos.reduce((soma, p) => soma + restantes(p, vendidos), 0);
-  const maior = Math.max(...dados.produtos.map((p) => desconto(p, criterio)));
-  const linhas = [
-    [dados.produtos.length, 'produtos'],
-    [disponiveis.toLocaleString('pt-BR'), 'unidades disponíveis'],
-    [`até ${maior}%`, 'abaixo da referência'],
-  ];
-  $('#numeros').replaceChildren(...linhas.map(([valor, rotulo]) =>
-    el('div', {}, el('dt', {}, rotulo), el('dd', {}, valor))));
-}
-
-function montarVitrine() {
-  const criterio = dados.bazar.descontoSobre;
-  // O mais valioso de cada categoria, para a vitrine não repetir produto parecido.
-  const porCategoria = new Map();
-  for (const p of dados.produtos) {
-    if (restantes(p, vendidos) === 0) continue;
-    const atual = porCategoria.get(p.categoria);
-    if (!atual || p.preco > atual.preco) porCategoria.set(p.categoria, p);
-  }
-  const destaques = [...porCategoria.values()].sort((a, b) => b.preco - a.preco).slice(0, 3);
-  $('#vitrine').replaceChildren(...destaques.map((p) => {
-    const pct = desconto(p, criterio);
-    return el('figure', {}, el('img', { src: p.imagem, alt: '' }), pct > 0 && el('span', {}, `-${pct}%`));
-  }));
-}
-
 function montarCategorias() {
-  const contagem = (id) => dados.produtos.filter((p) => id === 'todos' || p.categoria === id).length;
-  const lista = [{ id: 'todos', nome: 'Todos' }, ...dados.categorias.filter((c) => contagem(c.id) > 0)];
+  const usadas = dados.categorias.filter((c) => dados.produtos.some((p) => p.categoria === c.id));
+  const lista = [{ id: 'todos', nome: 'Todos' }, ...usadas];
   $('#categorias').replaceChildren(...lista.map((c) =>
-    el('button', {
-      class: 'chip',
-      role: 'tab',
-      type: 'button',
-      'aria-selected': String(estado.categoria === c.id),
-      onclick: () => escolherCategoria(c.id),
-    }, c.nome, el('span', { class: 'chip__n' }, contagem(c.id)))));
+    el('button', { type: 'button', 'aria-pressed': String(estado.categoria === c.id), onclick: () => escolherCategoria(c.id) }, c.nome)));
 }
 
 function escolherCategoria(id) {
@@ -121,29 +76,29 @@ function textoEstoque(p) {
 function cartao(p) {
   const criterio = dados.bazar.descontoSobre;
   const pct = desconto(p, criterio);
-  const ref = referencia(p, criterio);
   const esgotado = restantes(p, vendidos) === 0;
 
   return el('article', { class: `card${esgotado ? ' card--esgotado' : ''}` },
     el('div', { class: 'card__foto' },
       el('img', { src: p.imagem, alt: '', loading: 'lazy', width: 400, height: 400 }),
-      pct > 0 && !esgotado && el('span', { class: 'selo' }, `-${pct}%`),
-      esgotado && el('span', { class: 'tarja' }, 'Esgotado')),
+      pct > 0 && !esgotado && el('span', { class: 'etiqueta' }, `-${pct}%`),
+      esgotado && el('div', { class: 'esgotado' }, el('span', {}, 'Esgotado'))),
     el('div', { class: 'card__corpo' },
       el('p', { class: 'card__cat' }, nomeCategoria(p.categoria)),
       el('h3', { class: 'card__nome' },
         el('button', { type: 'button', class: 'card__abrir', onclick: () => abrir(p) }, p.nome)),
       el('div', { class: 'preco' },
-        pct > 0 && el('s', { class: 'preco__de' }, dinheiro(ref)),
-        el('strong', { class: 'preco__por' }, dinheiro(p.preco))),
-      pct > 0 && el('p', { class: 'card__economia' }, `Economia de ${dinheiro(Math.round((ref - p.preco) * 100) / 100)}`),
-      el('p', { class: `card__estoque${esgotado ? ' card__estoque--fim' : ''}` }, textoEstoque(p))));
+        el('strong', { class: 'preco__por' }, dinheiro(p.preco)),
+        pct > 0 && el('s', { class: 'preco__de' }, dinheiro(referencia(p, criterio)))),
+      el('p', { class: 'card__estoque' }, textoEstoque(p))));
 }
 
 function desenhar() {
   const lista = filtrados();
   $('#grade').replaceChildren(...lista.map(cartao));
   $('#vazio').hidden = lista.length > 0;
+  const onde = estado.categoria === 'todos' ? '' : ` em ${nomeCategoria(estado.categoria)}`;
+  $('#contagem').textContent = `${lista.length} ${lista.length === 1 ? 'produto' : 'produtos'}${onde}`;
 }
 
 function abrir(p) {
@@ -159,31 +114,29 @@ function abrir(p) {
     ['Disponibilidade', textoEstoque(p)],
   ].filter(Boolean);
 
-  const caixa = $('#detalhe-conteudo');
-  caixa.replaceChildren(
+  $('#detalhe-conteudo').replaceChildren(
     el('button', { class: 'detalhe__fechar', type: 'button', 'aria-label': 'Fechar', onclick: fechar },
       el('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true', html: '<path d="M6 6l12 12M18 6 6 18"/>' })),
     el('div', { class: 'detalhe__foto' },
       el('img', { src: p.imagem, alt: p.nome }),
+      pct > 0 && !esgotado && el('span', { class: 'etiqueta' }, `-${pct}%`),
       el('span', { class: 'detalhe__ilustrativa' }, 'Imagem ilustrativa')),
     el('div', { class: 'detalhe__info' },
       el('p', { class: 'card__cat' }, nomeCategoria(p.categoria)),
       el('h2', { id: 'detalhe-nome' }, p.nome),
       p.modelo && el('p', { class: 'detalhe__modelo' }, `Modelo ${p.modelo}`),
       el('div', { class: 'detalhe__preco' },
-        el('div', {},
-          pct > 0 && el('s', { class: 'preco__de' }, dinheiro(ref)),
-          el('strong', { class: 'preco__por' }, dinheiro(p.preco)),
-          el('span', { class: 'detalhe__un' }, 'por unidade')),
-        pct > 0 && !esgotado && el('span', { class: 'selo selo--grande' }, `-${pct}%`)),
+        el('strong', { class: 'preco__por' }, dinheiro(p.preco)),
+        el('p', {}, pct > 0
+          ? ['Referência ', el('s', {}, dinheiro(ref)), '. Economia de ', el('b', {}, dinheiro(Math.round((ref - p.preco) * 100) / 100)), ' por unidade.']
+          : 'Preço por unidade.')),
       p.descricao && el('p', { class: 'detalhe__descricao' }, p.descricao),
       el('dl', { class: 'detalhe__tabela' }, ...linhas.map(([k, v]) => el('div', {}, el('dt', {}, k), el('dd', {}, v)))),
       p.preco > b.limitePorCpf && el('p', { class: 'detalhe__alerta' },
         `Acima de ${dinheiro(b.limitePorCpf)} por unidade: só pode ser comprado isoladamente, sem somar outros itens na mesma compra.`),
       el('a', { class: 'detalhe__regras', href: 'regras.html' }, 'Ver as regras de compra')));
 
-  const dialogo = $('#detalhe');
-  dialogo.showModal();
+  $('#detalhe').showModal();
 }
 
 function fechar() {
@@ -196,7 +149,6 @@ async function atualizarVendidos() {
     const novo = estoque.vendidos || {};
     if (JSON.stringify(novo) !== JSON.stringify(vendidos)) {
       vendidos = novo;
-      preencherNumeros();
       desenhar();
     }
   } catch { /* sem rede: segue com o que tem */ }
@@ -217,8 +169,6 @@ async function iniciar() {
   if (dados.categorias.some((c) => c.id === inicial)) estado.categoria = inicial;
 
   preencherBazar();
-  preencherNumeros();
-  montarVitrine();
   montarCategorias();
   desenhar();
 

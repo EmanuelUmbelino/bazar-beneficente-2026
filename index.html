@@ -8,21 +8,18 @@
   <meta property="og:title" content="Bazar Beneficente 2026">
   <meta property="og:description" content="Mercadorias apreendidas e doadas pela Receita Federal, com preço de bazar. Veja o catálogo.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f7f5f0">
   <link rel="icon" href="assets/img/icone.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/estilo.css">
   <script type="module" src="assets/js/catalogo.js"></script>
 </head>
 <body>
   <header class="topo">
     <div class="topo__dentro">
-      <a class="marca" href="./">
-        <img src="assets/img/icone.svg" alt="" width="32" height="32">
-        <span>Bazar Beneficente <b>2026</b></span>
-      </a>
+      <a class="marca" href="./">Bazar Beneficente <span>2026</span></a>
       <nav class="menu" aria-label="Principal">
         <a href="./" aria-current="page">Catálogo</a>
         <a href="regras.html">Regras</a>
@@ -31,47 +28,32 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero__dentro">
-        <div class="hero__texto">
-        <p class="hero__selo">Mercadorias da Receita Federal</p>
+    <section class="abertura">
+      <div class="abertura__texto">
         <h1 data-campo="nome">Bazar Beneficente 2026</h1>
-        <p class="hero__chamada" data-campo="chamada">Mercadorias apreendidas e doadas pela Receita Federal, com preço de bazar.</p>
-        <ul class="hero__info" id="info"></ul>
-        <dl class="numeros" id="numeros"></dl>
-        </div>
-        <div class="vitrine" id="vitrine" aria-hidden="true"></div>
+        <p class="abertura__chamada" data-campo="chamada">Mercadorias apreendidas e doadas pela Receita Federal, com preço de bazar.</p>
+        <p class="abertura__aviso">Atenção: não é um bazar organizado pela Receita Federal.</p>
       </div>
+      <dl class="ficha" id="ficha"></dl>
     </section>
-
-    <div class="aviso">
-      <p data-campo="aviso"></p>
-    </div>
 
     <section class="catalogo" aria-labelledby="titulo-catalogo">
       <h2 id="titulo-catalogo" class="sr">Produtos</h2>
-      <div class="barra">
-        <div class="barra__dentro">
-          <div class="chips" id="categorias" role="tablist" aria-label="Categorias"></div>
-          <div class="barra__ferramentas">
-            <label class="busca">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-              <input id="busca" type="search" placeholder="Buscar produto" autocomplete="off" aria-label="Buscar produto">
-            </label>
-            <label class="ordem">
-              <span class="sr">Ordenar</span>
-              <select id="ordem" aria-label="Ordenar">
-                <option value="destaque">Destaques</option>
-                <option value="desconto">Maior desconto</option>
-                <option value="menor">Menor preço</option>
-                <option value="maior">Maior preço</option>
-              </select>
-            </label>
-          </div>
+      <nav class="abas" id="categorias" aria-label="Categorias"></nav>
+      <div class="ferramentas">
+        <p class="contagem" id="contagem" aria-live="polite"></p>
+        <div class="ferramentas__campos">
+          <input class="campo" id="busca" type="search" placeholder="Buscar produto" autocomplete="off" aria-label="Buscar produto">
+          <select class="campo" id="ordem" aria-label="Ordenar">
+            <option value="destaque">Destaques</option>
+            <option value="desconto">Maior desconto</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+          </select>
         </div>
       </div>
 
-      <div class="grade" id="grade" aria-live="polite"></div>
+      <div class="grade" id="grade"></div>
       <p class="vazio" id="vazio" hidden>Nenhum produto encontrado. Tente outra busca ou categoria.</p>
 
       <p class="nota" id="nota"></p>
