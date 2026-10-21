@@ -29,7 +29,7 @@ HTML, CSS e JavaScript puros, sem build. O GitHub Pages serve direto da branch `
 
 Se o preço do bazar não fica abaixo da referência, o produto aparece sem selo de desconto.
 
-**Média de mercado:** conferida em 20/10/2026; fontes e o que mudou em relação à planilha estão em `data/fontes-de-preco.md`.
+**Preço de mercado:** conferido em 21/10/2026 na página de cada loja; fontes em `data/fontes-de-preco.md` e no detalhe de cada produto no site.
 
 **Atualizar pela planilha:** `python ferramentas/importar_planilha.py` lê a planilha de produtos e atualiza unidades, valores e preço. Nome de exibição, categoria, descrição e foto continuam como estão, e a média de mercado também, nos produtos marcados com `mercadoConferido`. Produto novo entra sem foto e na categoria "Outros": complete à mão.
 

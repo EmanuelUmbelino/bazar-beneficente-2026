@@ -51,11 +51,15 @@
       "unidades": 2,
       "valorRfb": 5888.85,
       "mercado": [
-        2300,
-        2800
+        2848.1,
+        2848.1
       ],
       "preco": 2000,
-      "mercadoConferido": "2026-10-20"
+      "mercadoConferido": "2026-10-21",
+      "mercadoFonte": {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/B0HN564N6P"
+      }
     },
     {
       "id": "ipad-9-cinza",
@@ -68,11 +72,15 @@
       "unidades": 1,
       "valorRfb": 2277.97,
       "mercado": [
-        2300,
-        2800
+        2848.1,
+        2848.1
       ],
       "preco": 2000,
-      "mercadoConferido": "2026-10-20"
+      "mercadoConferido": "2026-10-21",
+      "mercadoFonte": {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/B0HN564N6P"
+      }
     },
     {
       "id": "apple-pencil-usb-c",
@@ -85,11 +93,15 @@
       "unidades": 1,
       "valorRfb": 1179,
       "mercado": [
-        800,
-        900
+        809.1,
+        899
       ],
       "preco": 600,
-      "mercadoConferido": "2026-10-20"
+      "mercadoConferido": "2026-10-21",
+      "mercadoFonte": {
+        "loja": "Apple",
+        "url": "https://www.apple.com/br/shop/product/MUWA3AM/A/apple-pencil-usb-c"
+      }
     },
     {
       "id": "teclado-kapbom-ka-690",
@@ -102,12 +114,16 @@
       "unidades": 4,
       "valorRfb": 99.9,
       "mercado": [
-        60,
-        115
+        67.99,
+        67.99
       ],
       "preco": 40,
-      "mercadoConferido": "2026-10-20",
-      "fotoReal": true
+      "mercadoConferido": "2026-10-21",
+      "fotoReal": true,
+      "mercadoFonte": {
+        "loja": "Terraço Import Som",
+        "url": "https://terracoimportson.com.br/products/mini-teclado-dobravel-bluetooth-kapbom-ka-690"
+      }
     },
     {
       "id": "camera-jortan-jt-817qj",
@@ -120,10 +136,15 @@
       "unidades": 1,
       "valorRfb": 190.95,
       "mercado": [
-        150,
-        220
+        159.9,
+        159.9
       ],
-      "preco": 100
+      "preco": 100,
+      "mercadoConferido": "2026-10-21",
+      "mercadoFonte": {
+        "loja": "KaBuM",
+        "url": "https://www.kabum.com.br/produto/364781/camera-de-seguranca-jortan-dome-ip-panoramica-wi-fi-1080p-hd-colorida-ip66-branco-lampada"
+      }
     },
     {
       "id": "jbl-clip-4",
@@ -136,12 +157,16 @@
       "unidades": 1,
       "valorRfb": 454,
       "mercado": [
-        400,
-        475
+        349.99,
+        349.99
       ],
       "preco": 300,
-      "mercadoConferido": "2026-10-20",
-      "fotoReal": true
+      "mercadoConferido": "2026-10-21",
+      "fotoReal": true,
+      "mercadoFonte": {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/B08VN7GW9J"
+      }
     },
     {
       "id": "havit-sq128bt",
@@ -170,12 +195,16 @@
       "unidades": 500,
       "valorRfb": 7,
       "mercado": [
-        5,
-        7
+        4.89,
+        4.89
       ],
       "preco": 3.5,
-      "mercadoConferido": "2026-10-20",
-      "fotoReal": true
+      "mercadoConferido": "2026-10-21",
+      "fotoReal": true,
+      "mercadoFonte": {
+        "loja": "Amazon",
+        "url": "https://www.amazon.com.br/dp/B078CQX3V1"
+      }
     }
   ]
 }

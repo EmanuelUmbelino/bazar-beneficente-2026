@@ -38,7 +38,7 @@ function preencherBazar() {
   }));
 
   $('#nota').textContent =
-    'Algumas imagens são ilustrativas. O desconto é calculado sobre o menor valor de referência entre a média de mercado e a avaliação da Receita Federal. ' +
+    'Algumas imagens são ilustrativas. O desconto é calculado sobre o menor valor de referência entre o preço de mercado (conferido em 21/10/2026) e a avaliação da Receita Federal. ' +
     'Os preços valem no dia do bazar e a disponibilidade pode mudar durante o evento.';
 }
 
@@ -141,7 +141,9 @@ function abrir(p) {
   const faixa = faixaMercado(p);
 
   const linhas = [
-    faixa && ['Média de mercado', faixa],
+    faixa && ['Preço de mercado', p.mercadoFonte
+      ? el('a', { href: p.mercadoFonte.url, target: '_blank', rel: 'noopener' }, `${faixa} (${p.mercadoFonte.loja})`)
+      : faixa],
     p.valorRfb && ['Avaliação da Receita Federal', dinheiro(p.valorRfb)],
     ['Disponibilidade', textoEstoque(p)],
   ].filter(Boolean);
