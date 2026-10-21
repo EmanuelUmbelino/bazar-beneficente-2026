@@ -162,13 +162,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .card__estoque--fim::before { background: #9ca3af; }
 
 .vazio { max-width: var(--largura); margin: 24px auto; padding: 0 20px; color: var(--suave); text-align: center; }
-.verificado {
-  max-width: calc(var(--largura) - 40px); margin: 32px auto 0; padding: 14px 18px;
-  background: var(--marca-clara); border-left: 4px solid var(--marca); border-radius: 10px;
-  color: var(--marca-escura); font-size: 0.95rem;
-}
-@media (max-width: 720px) { .verificado { margin: 24px 16px 0; } }
-.nota { max-width: var(--largura); margin: 16px auto 0; padding: 0 20px; color: var(--suave); font-size: 0.82rem; }
+.nota { max-width: var(--largura); margin: 28px auto 0; padding: 0 20px; color: var(--suave); font-size: 0.82rem; }
+.nota + .nota { margin-top: 8px; }
 
 /* Detalhe */
 .detalhe {

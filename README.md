@@ -23,8 +23,8 @@ HTML, CSS e JavaScript puros, sem build. O GitHub Pages serve direto da branch `
 **Data, horário, local e Instagram:** preencha os campos em `bazar` no `produtos.json`. Enquanto estiverem vazios, o site diz que serão divulgados em breve.
 
 **Desconto:** `bazar.descontoSobre` escolhe a referência.
-- `menor` (padrão): o menor valor entre a média de mercado e a avaliação da Receita. É o mais conservador.
-- `mercado`: só a média de mercado (limite de baixo da faixa).
+- `mercado` (em uso): o preço de mercado conferido nas lojas (o menor valor, quando há faixa).
+- `menor`: o menor valor entre o preço de mercado e a avaliação da Receita.
 - `rfb`: só a avaliação da Receita.
 
 Se o preço do bazar não fica abaixo da referência, o produto aparece sem selo de desconto.

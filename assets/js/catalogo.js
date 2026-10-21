@@ -39,13 +39,12 @@ function preencherBazar() {
 
   if (b.precosConferidosEm) {
     const verificado = $('#verificado');
-    verificado.replaceChildren(el('b', {}, `* Preços de mercado verificados na internet em ${b.precosConferidosEm}`),
-      ', em lojas brasileiras. A loja e o link de cada preço estão no detalhe do produto.');
+    verificado.textContent = `* Preços de mercado verificados na internet em ${b.precosConferidosEm}, em lojas brasileiras. A loja e o link de cada preço estão no detalhe do produto.`;
     verificado.hidden = false;
   }
 
   $('#nota').textContent =
-    'Algumas imagens são ilustrativas. O desconto é calculado sobre o menor valor de referência entre o preço de mercado e a avaliação da Receita Federal. ' +
+    'Algumas imagens são ilustrativas. O desconto é calculado sobre o preço de mercado. ' +
     'Os preços valem no dia do bazar e a disponibilidade pode mudar durante o evento.';
 }
 
