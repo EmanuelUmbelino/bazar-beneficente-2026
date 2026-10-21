@@ -37,8 +37,15 @@ function preencherBazar() {
     return el('li', {}, el('svg', { viewBox: '0 0 24 24', 'aria-hidden': 'true', html: icones[icone] }), conteudo);
   }));
 
+  if (b.precosConferidosEm) {
+    const verificado = $('#verificado');
+    verificado.replaceChildren(el('b', {}, `* Preços de mercado verificados na internet em ${b.precosConferidosEm}`),
+      ', em lojas brasileiras. A loja e o link de cada preço estão no detalhe do produto.');
+    verificado.hidden = false;
+  }
+
   $('#nota').textContent =
-    'Algumas imagens são ilustrativas. O desconto é calculado sobre o menor valor de referência entre o preço de mercado (conferido em 21/10/2026) e a avaliação da Receita Federal. ' +
+    'Algumas imagens são ilustrativas. O desconto é calculado sobre o menor valor de referência entre o preço de mercado e a avaliação da Receita Federal. ' +
     'Os preços valem no dia do bazar e a disponibilidade pode mudar durante o evento.';
 }
 
@@ -47,7 +54,7 @@ function preencherNumeros() {
   const maior = Math.max(...dados.produtos.map((p) => desconto(p, 'mercado')));
   const linhas = [
     [dados.produtos.length, 'produtos'],
-    [`até ${maior}%`, 'de desconto em relação ao mercado'],
+    [`até ${maior}%`, 'de desconto em relação ao mercado*'],
   ];
   $('#numeros').replaceChildren(...linhas.map(([valor, rotulo]) =>
     el('div', {}, el('dt', {}, rotulo), el('dd', {}, valor))));

@@ -10,7 +10,8 @@
     "contato": "",
     "limitePorCpf": 700,
     "descontoSobre": "menor",
-    "pagamento": "Dinheiro, PIX ou cartão"
+    "pagamento": "Dinheiro, PIX ou cartão",
+    "precosConferidosEm": "21/10/2026"
   },
   "github": {
     "dono": "EmanuelUmbelino",
